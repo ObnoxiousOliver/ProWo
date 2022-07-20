@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProWo Präsentation kgV</title>
+
+  <!-- Import PyScript -->
+  <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+
+  <div class="flex p-2" style="height: 100vh;">
+    <pre class="p-2 pr-20 rounded">
+<mkey>def</mkey> <mfunc>kgV</mfunc> <mpara>(</mpara><mvar>num01</mvar>, <mvar>num02</mvar><mpara>)</mpara>:
+  <mvar>_min</mvar> <mop>=</mop> <mfunc>min</mfunc><mpara>(</mpara><mvar>num01</mvar>, <mvar>num02</mvar><mpara>)</mpara>
+  <mvar>_max</mvar> <mop>=</mop> <mfunc>max</mfunc><mpara>(</mpara><mvar>num01</mvar>, <mvar>num02</mvar><mpara>)</mpara>
+  
+  <mvar>fac</mvar> <mop>=</mop> <mvar>_max</mvar>
+  
+  <mkey>while</mkey> <mvar>fac</mvar> <mop><=</mop> <mvar>_max</mvar> <mop>*</mop> <mvar>_min</mvar>:
+      <mkey>if</mkey> <mvar>fac</mvar> <mop>%</mop> <mvar>_min</mvar> <mop>==</mop> <mnum>0</mnum>:
+          <mkey>return</mkey> <mvar>fac</mvar>
+      <mvar>fac</mvar> <mop>+=</mop> <mvar>_max</mvar>
+    </pre>
+    <div class="p-4 flex-grow">
+      <h1 class="text-3xl font-bold mb-4">kgV</h1>
+    
+      <button id="submit" class="
+        bg-green-500
+        pt-2 pb-2 pl-5 pr-5
+        rounded
+        hover:bg-green-400
+        float-right
+        text-white
+        shadow-md
+      ">
+        Rechnen!
+      </button>
+      <label for="num1">Nummer 1:</label>
+      <input type="number" name="num1" id="num1" class="border-2 ml-5 mb-2">
+    
+      <br>
+      <label for="num2">Nummer 2:</label>
+      <input type="number" name="num2" id="num2" class="border-2 ml-5">
+    
+      <br><br>
+      <p class="mb-2">Ergebnis:</p>
+      <p class="text-3xl" id="out"></p>
+    </div>
+  </div>
+
+    <style>
+      pre {
+        background: #282C34;
+        color: #ABB2BE;
+      }
+      mkey { color: #C27BDA; }
+      mfunc { color: #68AEEC; }
+      mpara { color: #CE9B6B; }
+      mvar { color: #DB7077; }
+      mop { color: #60B5C1; }
+      mnum { color: #CE9B6B; }
+    </style>
+
+  <py-script src="./main.py"></py-script>
+</body>
+</html>
